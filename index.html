@@ -9,9 +9,36 @@
 </head>
 <body>
     <header>
-        <img src="img/reLoved_white.png" alt="logo">
+        <img src="img/reLoved_white.png" alt="logo" id="responsivelogo">
 
     </header>
+
+        <div class="login" id="loginform">
+            <h2> Kirjaudu sisään</h2>
+            <input type="text" id="username" placeholder="Käyttäjänimi">
+            <input type="password" id="userpassword" placeholder="Salasana">
+
+
+            <div class="loginbuttons">
+                <button class="loginbutton" onclick="kirjaudu()">Kirjaudu sisään</button>
+                <button class="loginbutton" onclick="peruuta()">Peruuta</button>
+            </div>
+            <h3>Tai</h3>
+            <button class="registerbutton" onclick="avaaRekisterointi()">Rekisteröidy tästä</button>
+        </div>
+
+        <div class="register" id="registerform">
+            <h2>Rekisteröidy</h2>
+            <input type="text" id="newUsername" placeholder="Valitse käyttäjänimi">
+            <input type="email" id="email" placeholder="Sähköposti">
+            <input type="password" id="newPassword" placeholder="Valitse salasana">
+            <input type="password" id="confirmPassword" placeholder="Syötä salasana uudelleen">
+
+        <div class="createbuttons">
+            <button class="createbutton" onclick="rekisteroidy()">Luo tili</button>
+        </div>
+    </div>
+
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <p class="col-md-4 mb-0 ml-5 text-muted">Reloved</p>
