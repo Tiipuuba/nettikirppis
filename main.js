@@ -23,17 +23,9 @@ var parsittu = JSON.parse(localStorage.getItem('Pirkko'))
 // esim kun näytetään viestit profiilissa
 console.log(parsittu.name, parsittu.password);
 
-
 for (let message in parsittu.messages) {
     console.log(message + ": " + parsittu.messages[message]);
 }
 
 // Poistaa viestin
 delete parsittu.messages['Vesa']
-
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
