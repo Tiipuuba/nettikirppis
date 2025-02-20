@@ -22,6 +22,10 @@ header img {
     width: auto;
 }
 
+.card {
+    margin-top: 25px;
+}
+
 /* Kirjautumislomake */
 .login {
     width: 600px;
