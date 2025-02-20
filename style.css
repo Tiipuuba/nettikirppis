@@ -1,6 +1,164 @@
+body {
+    background-color: #dedff0;
+}
+
 footer {
     position: fixed;
     height: 100px;
     bottom: 0;
     width: 100%;
 }
+
+header {
+    width: 100%;
+    height: 180px;
+    background-color: #4459f5;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 120px;
+    width: auto;
+}
+
+/* Kirjautumislomake */
+.login {
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.login input {
+    display: block;
+    width: 80%;
+    margin: 5px auto 5px;
+}
+
+.loginbuttons {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 15px;
+
+}
+
+.loginbutton {
+    background-color: #d0d0d4;
+    height: 40px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 49%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginbutton:hover {
+    background-color: #dedff0;
+}
+
+/* Rekisteröitymispainike*/
+.registerbutton {
+    background-color: #d0d0d4;
+    height: 40px;
+    width: 40%;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerbutton:hover {
+    background-color: #dedff0;
+}
+
+/* Rekisteröitymislomake*/
+.login h3 {
+    margin: 10px;
+    font-size: 17px;
+}
+
+.register {
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.register input {
+    display: block;
+    width: 80%;
+    margin: 5px auto 5px;
+}
+
+.createbuttons {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.createbutton {
+    display: flex;
+    background-color: #d0d0d4;
+    height: 40px;
+    width: 40%;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.createbutton:hover {
+    background-color: #dedff0;
+}
+
+
+/*Responsive*/
+
+@media only screen and (max-width: 800px){
+    #responsivelogo {
+        height: 50px;
+        width: auto;
+    }
+
+    header {
+        height: 80px;
+        width: 100%;
+
+    }
+}
+    
+
