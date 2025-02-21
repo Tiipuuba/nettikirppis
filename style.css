@@ -1,7 +1,18 @@
 body {
-    background-color: #dedff0;
+    background: linear-gradient(90deg, #8491ff, #4fffc4);
+  background-size: 200% 200%;
+  animation: moveGradient 8s linear infinite alternate;
 }
 
+@keyframes moveGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
 footer {
     position: fixed;
     height: 100px;
