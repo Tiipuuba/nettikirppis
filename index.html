@@ -3,39 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nettikirppis</title>
+    <title>ReLoved</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="img/reLoved_white.png" alt="logo" id="responsivelogo">
-        <a href="store.html">store</a>
+    <header class="header-grid">
+        <div class="logo-container">
+            <img src="img/reLoved_white.png" alt="logo" id="responsivelogo">
+        </div>
+        <div class="button-container">
+                <button class="storeb" onclick="window.location.href='store.html'">Kauppa</button>
+                <button class="buttonlogin" onclick="window.location.href='login.html'">Kirjaudu sisään | Rekisteröidy</button>
+            </div>
+
     </header>
 
-        <div class="login" id="loginform">
-            <h2> Kirjaudu sisään</h2>
-            <input type="text" id="username" placeholder="Käyttäjänimi">
-            <input type="password" id="userpassword" placeholder="Salasana">
-
-
-            <div class="loginbuttons">
-                <button class="loginbutton" onclick="kirjaudu()">Kirjaudu sisään</button>
-                <button class="loginbutton" onclick="peruuta()">Peruuta</button>
-            </div>
-            <h3>Tai</h3>
-            <button class="registerbutton" onclick="avaaRekisterointi()">Rekisteröidy tästä</button>
+    <div class="imgContainer">
+        <img src="img/pexels-ivan-samkov-7621036.jpg" alt="menwithshirt" class="menwithshirt">
+        <div class="imgText">
+            <p>ReLoved - Kestävää muotia ja aarteita! </p>
         </div>
+    </div>
 
-        <div class="register" id="registerform">
-            <h2>Rekisteröidy</h2>
-            <input type="text" id="newUsername" placeholder="Valitse käyttäjänimi">
-            <input type="email" id="email" placeholder="Sähköposti">
-            <input type="password" id="newPassword" placeholder="Valitse salasana">
-            <input type="password" id="confirmPassword" placeholder="Syötä salasana uudelleen">
+    <p class="introductoryText">
+    ReLoved on enemmän kuin second hand -kauppa - se on yhteisö, joka arvostaa kierrätystä, vastuullista kuluttamista ja laadukkaita löytöjä. Meiltä löydät tyylikkäitä vaatteita, asusteita, kodin sisustusta ja paljon muuta - aina edullisesti ja ekologisesti. <br><br>
+    Tavoitteenamme on antaa vaatteille ja tavaroille uusi elämä sekä vähentää turhaa kulutusta. Tule tekemään löytöjä tai tuo omat tarpeettomat aarteesi kiertoon! Yhdessä voimme tehdä maailmasta hieman vihreämmän. <br><br>
+    Löydä, ihastu ja reLove!</p>
 
-        <div class="createbuttons">
-            <button class="createbutton" onclick="rekisteroidy()">Luo tili</button>
+
+    <h2 class="info">THIS IS HOW <br> IT WORKS</h2>
+
+
+    <div class="infotext">
+        <div class="infotext-item">
+            <img src="img/kauttajatunnus.png" alt="kauttajatunnus">
+            <p><b>Luo käyttäjätunnus </b><br>Rekisteröidy luomalla käyttäjätunnus, jonka avulla voit hallita ostoprosessia ja myyntituotteitasi. Käyttäjätunnus on tarpeen sekä ostamiseen että myymiseen.</p>
+        </div>
+        <div class="infotext-item">
+            <img src="img/etsi.png" alt="etsi">
+            <p><b>Selaa ja valitse tuotteet</b> <br>Etsi haluamasi tuotteet valikoimastamme. Voit tehdä ostoksia tai lisätä myyntiin tuotteitasi, kuten vaatteita, asusteita ja sisustustavaroita. </p>
+        </div>
+        <div class="infotext-item">
+            <img src="img/viesti.png" alt="viesti">
+            <p><b>Ota yhteyttä myyjään</b><br>  Voit lähettää viestejä myyjille verkkosivun kautta, jos sinulla on kysyttävää tuotteista tai haluat tarkempia tietoja ennen ostopäätöstä.</p>
+        </div>
+        <div class="infotext-item">
+            <img src="img/nouda.png" alt="nouda">
+            <p><b>Varaa ja nouda tuotteet </b><br> Kun olet valinnut ostettavat tuotteet, varaa ne verkkosivullamme ja sovi nouto myymälästämme. Maksaminen tapahtuu noudon yhteydessä paikan päällä.</p>
+        </div>
+        <div class="infotext-item">
+            <img src="img/myy.png" alt="myy">
+            <p><b>Myy tuotteesi </b><br>  Tuo hyvätasoiset ja ehjät tuotteesi myyntiin.</p>
+        </div>
+        <div class="infotext-item">
+            <img src="img/ekologisuus.png" alt="ekologisuus">
+            <p><b>Vastuullinen kuluttaminen </b><br>Muista, että reLovedissa panostamme kestävään kulutukseen. Suosi kestäviä valintoja ja valitse laadukkaita, ajattomia tuotteita. </p>
         </div>
     </div>
 

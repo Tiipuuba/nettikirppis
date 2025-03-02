@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Quicksand:wght@300..700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
 body {
-    background: linear-gradient(90deg, #8491ff, #4fffc4);
+    background: linear-gradient(90deg, #92b6ea, #cdd8e7);
   background-size: 200% 200%;
   animation: moveGradient 8s linear infinite alternate;
 }
@@ -20,22 +24,183 @@ footer {
     width: 100%;
 }
 
-header {
-    width: 100%;
-    height: 180px;
-    background-color: #4459f5;
-    display: flex;
+/* Header */
+header.header-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: #3d74c2;
+    padding: 0 20px;
     align-items: center;
+    width: 100%;
+    height: 170px;
+
 }
 
-header img {
+header .logo-container img {
     height: 120px;
     width: auto;
+}
+
+.header-grid .button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.buttonlogin {
+    background-color: #d0d0d4;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+
+}
+
+.buttonlogin:hover {
+    background-color: #dedff0;
+}
+
+.storeb {
+    background-color: #d0d0d4;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+
+.storeb:hover {
+    background-color: #dedff0;
 }
 
 .card {
     margin-top: 25px;
 }
+
+.frontpage {
+    background-color: #d0d0d4;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+
+.frontpage:hover {
+    background-color: #dedff0;
+}
+
+/*Esittelyteksti ja kuva*/
+
+.imgContainer {
+    position: relative;
+    width: 100%;
+}
+
+.menwithshirt {
+    width: 100%;
+    height: auto;
+    filter: brightness(70%);
+}
+
+.imgText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-size: 80px;
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    white-space: nowrap;
+}
+
+
+.introductoryText {
+    max-width: 1300px;
+    text-align: left;
+    font-family: "Quicksand", serif;
+    font-size: 20px;
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(-50%);
+}
+
+/* Ohjeistuskuvat */
+
+.infotext {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 40px;
+    justify-content: center;
+    align-items: start;
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10%;
+    max-width: 1300px;
+}
+
+.infotext-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.infotext-item p {
+    margin-top: 10px;
+    max-width: 300px;
+    text-align: center;
+    font-family: "Quicksand", serif;
+}
+
+.info {
+    margin: 50px;
+    text-align: center;
+    font-family: "Frijole", serif;
+    font-size: 50px;
+}
+
+.infotext-item img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 
 /* Kirjautumislomake */
 .login {
@@ -55,6 +220,14 @@ header img {
     padding: 10px;
 }
 
+.login h3 {
+    text-align: center;
+}
+
+#loginerror {
+    text-align: center;
+}
+
 .login input {
     display: block;
     width: 80%;
@@ -63,8 +236,9 @@ header img {
 
 .loginbuttons {
     display: flex;
-    justify-content: space-between;
-    width: 70%;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
     margin-top: 15px;
 
 }
@@ -76,7 +250,7 @@ header img {
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    width: 49%;
+    width: 200px;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -87,19 +261,30 @@ header img {
     background-color: #dedff0;
 }
 
+#loginerror{
+    color: red;
+    display: none;
+}
+
 /* Rekisteröitymispainike*/
 .registerbutton {
     background-color: #d0d0d4;
     height: 40px;
-    width: 40%;
+    width: 200px;
     font-size: 17px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     padding: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
+    display: block;
+    margin: 10px auto;
+}
+
+#registererror{
+    text-align: center;
+    color: red;
 }
 
 .registerbutton:hover {
@@ -107,6 +292,10 @@ header img {
 }
 
 /* Rekisteröitymislomake*/
+#registerform {
+    display: none;
+}
+
 .login h3 {
     margin: 10px;
     font-size: 17px;
@@ -136,22 +325,23 @@ header img {
 }
 
 .createbuttons {
-    width: 100%;
-    margin-top: 15px;
     display: flex;
     justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
 }
 
-.createbutton {
-    display: flex;
+.createbutton, .cancelbutton {
     background-color: #d0d0d4;
     height: 40px;
-    width: 40%;
+    width: 200px;
     font-size: 17px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     padding: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -160,20 +350,320 @@ header img {
     background-color: #dedff0;
 }
 
+.cancelbutton:hover {
+    background-color: #dedff0;
+}
+
 
 /*Responsive*/
+@media only screen and (max-width: 1400px) {
+    .imgText {
+        font-size: 60px;
+    }
+}
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1300px) {
+    .imgText {
+        font-size: 60px;
+    }
+
+    .introductoryText {
+        max-width: 1000px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .imgText {
+        font-size: 40px;
+    }
+
+    .introductoryText {
+        max-width: 800px;
+        font-size: 17px;
+        margin-top: 200px;
+    }
+
+    .buttonlogin {
+        height: 40px;
+        font-size: 12px;
+        width: 150px;
+    }
+
+    .storeb {
+        height: 40px;
+        font-size: 12px;
+        width: 100px;
+    }
+
+    .frontpage {
+        height: 40px;
+        font-size: 12px;
+        width: 100px;
+    }
+
+    #responsivelogo {
+        height: 70px;
+        width: auto;
+    }
+
+    header.header-grid  {
+        height: 120px;
+        width: 100%;
+    }
+
+    .infotext {
+        font-size: 15px;
+    }
+
+    .infotext-item img {
+        width: 60%;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 810px) {
+    .imgText {
+        font-size: 30px;
+    }
+
+    .introductoryText {
+        max-width: 500px;
+        font-size: 17px;
+        margin-top: 250px;
+    }
+
+    .buttonlogin {
+        height: 30px;
+        font-size: 10px;
+        width: 150px;
+    }
+
+    .frontpage {
+        height: 30px;
+        font-size: 10px;
+        width: 70px;
+    }
+
+    .storeb {
+        height: 30px;
+        font-size: 10px;
+        width: 70px;
+    }
+
+    .header-grid .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #responsivelogo {
+        height: 70px;
+        width: auto;
+    }
+
+    header.header-grid  {
+        height: 120px;
+        width: 100%;
+    }
+
+    .infotext {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+    }
+
+    .infotext-item img {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .info {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .login {
+        width: 500px;
+        margin: 80px auto;
+    }
+    
+    .login h2 {
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .login input {
+        height: 25px;
+        font-size: 15px;
+    }
+
+    .register input {
+        height: 25px;
+        font-size: 15px;
+    }
+    
+    
+    .loginbuttons {
+        align-items: center;
+    }
+    
+    .loginbutton {
+        height: 25px;
+        font-size: 15px;
+        width: 150px;
+        padding: 0;
+    }
+    
+    .login h3 {
+        font-size: 15px;
+        margin: 5px;
+    }
+
+    .registerbutton {
+        height: 25px;
+        width: 150px;
+        font-size: 15px;
+        margin: 5px auto;
+    }
+     
+    .register {
+        width: 500px;
+        margin: 80px auto;
+    }
+    
+    .register h2 {
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 20px;
+    }
+    
+    
+    .createbuttons {
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    .createbutton, .cancelbutton {
+        height: 25px;
+        font-size: 15px;
+        width: 150px;
+        padding: 0;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }  
+
     #responsivelogo {
         height: 50px;
         width: auto;
     }
 
-    header {
-        height: 80px;
+    header.header-grid  {
+        height: 90px;
         width: 100%;
+    }
+
+    header img {
+        height: 60px;
+        width: auto;
+    }
+    .imgText {
+        font-size: 21px;
+        white-space: nowrap;
+    }
+ 
+
+    .buttonlogin {
+        height: 20px;
+        font-size: 10px;
+        width: 150px;
+    }
+
+    .storeb {
+        height: 20px;
+        font-size: 10px;
+        width: 100px;
+    }
+
+    .frontpage {
+        height: 20px;
+        font-size: 10px;
+        width: 100px;
+    }
+    .header-grid .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .introductoryText {
+        max-width: 380px;
+        font-size: 15px;
+    }
+
+
+    .info {
+        font-size: 30px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .infotext {
+        grid-template-columns: 1fr;
+        gap: 20px;
 
     }
-}
-    
 
+    .infotext-item img {
+        width: 60%;
+        margin-bottom: 15px;
+    }
+
+    .login {
+        width: 400px;
+    }
+    
+    .loginbutton {
+        height: 25px;
+        font-size: 12px;
+        width: 120px;
+        padding: 0;
+    }
+    
+    .login h3 {
+        font-size: 12px;
+        margin: 5px;
+    }
+
+    .registerbutton {
+        width: 120px;
+        font-size: 12px;
+    }
+     
+    .register {
+        width: 400px;
+    }
+    
+    .createbutton, .cancelbutton {
+        font-size: 12px;
+        width: 120px;
+
+    }
+    
+    #loginerror{ 
+        font-size: 12px;
+    }
+
+
+
+}
