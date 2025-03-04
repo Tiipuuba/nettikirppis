@@ -16,11 +16,14 @@ body {
       background-position: 100% 50%;
     }
   }
-  
+
+.content {
+    min-height: 71vh
+}
+
 footer {
-    position: fixed;
+    background-color: white;
     height: 100px;
-    bottom: 0;
     width: 100%;
 }
 

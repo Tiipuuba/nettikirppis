@@ -8,74 +8,74 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="d-flex justify-content-between">
-        <img src="img/reLoved_white.png" alt="logo" id="responsivelogo">
-
-        <div class="d-flex flex-column">
-            <a href="profile.html">
-                <button type="submit" class="btn btn-primary mr-5 mt-2">Profiili</button>
-            </a>
-            <button type="button" class="btn btn-primary mr-5 mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Tee ilmoitus</button>
-            <a href="index.html">
-                <button type="submit" class="btn btn-primary mr-5 mt-2">Kirjaudu ulos</button>
-            </a>
+    <header class="header-grid">
+        <div class="logo-container">
+            <img src="img/reLoved_white.png" alt="logo" id="responsivelogo">
+        </div>
+        <div class="button-container">
+                <button class="storeb" onclick="window.location.href='profile.html'">Profiili</button>
+                <button type="button" class="storeb" data-bs-toggle="modal" data-bs-target="#exampleModal">Tee ilmoitus</button>
+                <button class="frontpage" onclick="window.location.href='index.html'">Kirjaudu ulos</button>
         </div>
     </header>
-    <!-- Modal (for making a listing) -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tee ilmoitus</h1>
+
+    <div class="content">
+        <!-- Modal (for making a listing) -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tee ilmoitus</h1>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <div class="d-flex flex-row mt-1">
+                                <input type="text" id="addlater" placeholder="tuote">
+                                <h5 class="m-1">Tuotteen nimi</h5>
+                            </div>
+                            <div class="d-flex flex-row mt-1">
+                                <input type="text" id="addlater" placeholder="kaupunki, kaupunginosa">
+                                <h5 class="m-1">Sijainti</h5>
+                            </div>
+                            <div class="d-flex flex-row mt-1">
+                                <textarea class="form-control" id="addlater" rows="5" placeholder="max 100-kirjainta"></textarea>
+                                <h5 class="m-1">Kuvaus</h5>
+                            </div>
+                            <div class="d-flex flex-row mt-1">
+                                <input type="text" id="addlater" placeholder="hinta">
+                                <h5 class="m-1">Hintapyyntö</h5>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Peruuta</button>
+                    <button type="button" class="btn btn-primary">Julkaise</button>
+                </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <form class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2">
-                        <div class="d-flex flex-row mt-1">
-                            <input type="text" id="addlater" placeholder="tuote">
-                            <h5 class="m-1">Tuotteen nimi</h5>
+        </div>
+        <!-- Card example -->
+        <div class="container">
+            <div class="card" style="width: 350px;">
+                <div class="card-body">
+                    <h5 class="card-title">Sohva</h5>
+                    <h6 class="card-subtitle mb2 text-muted">Mikkeli, Peitsari</h6>
+                    <p></p>
+                    <p class="card-text">Käytetty. Hieman ötököitä, ei haittaa istuttavuutta. Nopeat, rehdit, kontaktittomat kaupat</p>
+                    <p class="card-text text-muted">Hintapyyntö: 350€</p>
+                    <form class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <input type="text" id="given offer" placeholder="Vapaa tarjous">
+                            <button type="submit" class="btn btn-primary mb-2">Tarjoa!</button>
                         </div>
-                        <div class="d-flex flex-row mt-1">
-                            <input type="text" id="addlater" placeholder="kaupunki, kaupunginosa">
-                            <h5 class="m-1">Sijainti</h5>
-                        </div>
-                        <div class="d-flex flex-row mt-1">
-                            <textarea class="form-control" id="addlater" rows="5" placeholder="max 100-kirjainta"></textarea>
-                            <h5 class="m-1">Kuvaus</h5>
-                        </div>
-                        <div class="d-flex flex-row mt-1">
-                            <input type="text" id="addlater" placeholder="hinta">
-                            <h5 class="m-1">Hintapyyntö</h5>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Peruuta</button>
-                <button type="button" class="btn btn-primary">Julkaise</button>
-            </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Card example -->
-    <div class="container">
-        <div class="card" style="width: 350px;">
-            <div class="card-body">
-                <h5 class="card-title">Sohva</h5>
-                <h6 class="card-subtitle mb2 text-muted">Mikkeli, Peitsari</h6>
-                <p></p>
-                <p class="card-text">Käytetty. Hieman ötököitä, ei haittaa istuttavuutta. Nopeat, rehdit, kontaktittomat kaupat</p>
-                <p class="card-text text-muted">Hintapyyntö: 350€</p>
-                <form class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2">
-                        <input type="text" id="given offer" placeholder="Vapaa tarjous">
-                        <button type="submit" class="btn btn-primary mb-2">Tarjoa!</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <footer class="d-flex justify-content-between align-items-center">
         <p class="col-md-4 mb-0 ml-5 text-muted">Reloved</p>
         <p class="col-md-4 mb-0 justify-content-end text-muted">About us</p>
     </footer>
