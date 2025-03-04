@@ -1,3 +1,35 @@
+
+const toggleButton = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Function to apply the correct theme
+function applyTheme() {
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-theme");
+        toggleButton.textContent = "Switch to Light Mode";
+    } else {
+        body.classList.remove("dark-theme");
+        toggleButton.textContent = "Switch to Dark Mode";
+    }
+}
+
+// Apply theme on page load
+applyTheme();
+
+// Toggle theme on button click
+toggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-theme");
+
+    // Save theme preference
+    if (body.classList.contains("dark-theme")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+
+    applyTheme(); // Update button text
+});
+
 // Käyttäjän ominaisuudet
 let kayttaja = {
     name: "Pirkko",
