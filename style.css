@@ -2,21 +2,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 
+/* Light Theme (Default) */
 body {
     background: linear-gradient(90deg, #92b6ea, #cdd8e7);
-  background-size: 200% 200%;
-  animation: moveGradient 8s linear infinite alternate;
+    background-size: 200% 200%;
+    animation: moveGradient 8s linear infinite alternate;
+    color: black;
+    font-family: Arial, sans-serif;
 }
 
+/* Dark Theme */
+.dark-theme {
+    background: linear-gradient(90deg, #333333, #555555); /* Dark to gray transition */
+    background-size: 200% 200%;
+    animation: moveGradient 8s linear infinite alternate;
+    color: white;
+}
+
+/* Gradient Animation */
 @keyframes moveGradient {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     100% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
-  }
-  
+}
+
 footer {
     position: fixed;
     height: 100px;
