@@ -13,7 +13,7 @@ body {
 
 /* Dark Theme */
 .dark-theme {
-    background: linear-gradient(90deg, #333333, #555555); /* Dark to gray transition */
+    background: linear-gradient(90deg, #111111, #555555); /* Dark to gray transition */
     background-size: 200% 200%;
     animation: moveGradient 8s linear infinite alternate;
     color: white;
