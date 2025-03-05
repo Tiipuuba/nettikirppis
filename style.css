@@ -11,12 +11,46 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.theme-container {
+    padding: 20px;
+    border: 2px solid #743400;
+    border-radius: 30px 30px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#theme-toggle {
+    background: #68cceb;
+    color: #000000;
+    border: 4px solid #743400;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.dark-theme #theme-toggle {
+    background: #021555;
+    color: #fff;
+    border: 4px solid #ffbe69;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.075);
+}
+
 /* Dark Theme */
 .dark-theme {
     background: linear-gradient(90deg, #111111, #555555); /* Dark to gray transition */
     background-size: 200% 200%;
     animation: moveGradient 8s linear infinite alternate;
     color: white;
+}
+
+#theme-p {
+    text-align: center;
 }
 
 /* Gradient Animation */

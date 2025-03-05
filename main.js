@@ -21,11 +21,7 @@ toggleButton.addEventListener("click", () => {
     body.classList.toggle("dark-theme");
 
     // Save theme preference
-    if (body.classList.contains("dark-theme")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+    localStorage.setItem("theme", body.classList.contains("dark-theme") ? "dark" : "light");
 
     applyTheme(); // Update button text
 });
