@@ -11,6 +11,18 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.card {
+    flex-direction: row;
+    margin-bottom: 35px;
+}
+.card img {
+    width: 25%;
+    max-width: 225px;
+    max-height: 225px;
+    margin: 10px 25px 10px 10px;
+    border: 3px #0066ec solid ;
+}
+
 .theme-container {
     padding: 20px;
     border: 2px solid #743400;
