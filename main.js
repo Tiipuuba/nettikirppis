@@ -1,4 +1,3 @@
-
 const toggleButton = document.getElementById("theme-toggle");
 const body = document.body;
 
@@ -25,39 +24,6 @@ toggleButton.addEventListener("click", () => {
 
     applyTheme(); // Update button text
 });
-
-// Käyttäjän ominaisuudet
-let kayttaja = {
-    name: "Pirkko",
-    password: "salasana",
-    messages: {
-    }
-}
-
-// Ostajan "viestin" sisältö
-let ostaja = "Vesa"
-let tarjous = "2e"
-
-// Viesti lisätään myyjän profiiliin
-kayttaja.messages[ostaja] = [tarjous]
-
-//Muutetaan oikeaan muotoon ja tallennetaan localstorageen
-localStorage.setItem('Pirkko', JSON.stringify(kayttaja))
-
-// Puretaan ja tuodaan käyttäjä localstoragesta
-var parsittu = JSON.parse(localStorage.getItem('Pirkko'))
-
-// Näillä voi hakea tiedot ja käydä viestit läpi
-// esim kun näytetään viestit profiilissa
-console.log(parsittu.name, parsittu.password);
-
-for (let message in parsittu.messages) {
-    console.log(message + ": " + parsittu.messages[message]);
-}
-
-// Poistaa viestin
-delete parsittu.messages['Vesa']
-
 
 //Mona
 function avaaRekisterointi() {
@@ -174,59 +140,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Robert
-function createListing() {
-    // get details
-    const prod = document.getElementById('inputProduct').value
-    const loc = document.getElementById('inputLocation').value
-    const desc = document.getElementById('inputDescription').value
-    const cost = document.getElementById('inputCost').value
-    const user = localStorage.getItem('loggedUser')
-
-    // create card frame and such for listing
-    const container = document.createElement("div")
-    container.classList.add('container')
-
-    const card = document.createElement("div")
-    card.classList.add('card')
-
-    const cardbody = document.createElement("div")
-    cardbody.classList.add('card-body')
-
-    // give listing card its details
-    const title = document.createElement("h5")
-    title.classList.add('card-title')
-    title.innerText = prod
-    cardbody.appendChild(title)
-
-    const location = document.createElement("h6")
-    location.classList.add('card-subtitle', 'mb-2', 'text-muted')
-    location.innerText = loc
-    cardbody.appendChild(location)
-
-    const listBy = document.createElement("a")
-    listBy.classList.add('mb2')
-    listBy.innerText = user
-    cardbody.appendChild(listBy)
-
-    cardbody.appendChild(document.createElement("p"))
-
-    const description = document.createElement("p")
-    description.classList.add('card-text')
-    description.innerText = desc
-    cardbody.appendChild(description)
-
-    const prodCost = document.createElement("p")
-    prodCost.classList.add('card-text', 'text-muted')
-    prodCost.innerText = 'Hintapyyntö: ' + cost
-    cardbody.appendChild(prodCost)
-
-    // add rest together
-    card.appendChild(cardbody)
-    container.appendChild(card)
-    document.getElementById('listings').appendChild(container)
-    
-    // Close modal when done
-    var modal = bootstrap.Modal.getInstance(document.getElementById('listingModal'))
-    modal.hide();
-}
