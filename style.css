@@ -89,6 +89,10 @@ body {
     color: teal;
 }
 
+h2 {
+    color: black;
+}
+
 /* Gradient Animation */
 @keyframes moveGradient {
     0% {
