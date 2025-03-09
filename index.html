@@ -14,7 +14,8 @@
         </div>
         <div class="button-container">
                 <button class="storeb" onclick="window.location.href='store.html'">Kauppa</button>
-                <button class="buttonlogin" onclick="window.location.href='login.html'">Kirjaudu sisään | Rekisteröidy</button>
+                <button class="buttonlogin" id="buttonlogin" onclick="window.location.href='login.html'">Kirjaudu sisään | Rekisteröidy</button>
+                <button class="logoutbutton" id="logoutbuttonIndex" style="display:none;"  onclick="kirjauduUlos()">Kirjaudu ulos</button>
             </div>
 
     </header>
@@ -50,7 +51,7 @@
             </div>
             <div class="infotext-item">
                 <img src="img/nouda.png" alt="nouda">
-                <p><b>Varaa ja nouda tuotteet </b><br> Kun olet valinnut ostettavat tuotteet, varaa ne verkkosivullamme ja sovi nouto myymälästämme. Maksaminen tapahtuu noudon yhteydessä paikan päällä.</p>
+                <p><b>Varaa ja nouda tuotteet </b><br> Kun olet valinnut ostettavat tuotteet, varaa ne verkkosivullamme ja sovi nouto. Maksaminen tapahtuu noudon yhteydessä paikan päällä.</p>
             </div>
             <div class="infotext-item">
                 <img src="img/myy.png" alt="myy">
@@ -66,6 +67,10 @@
     <footer class="d-flex justify-content-between align-items-center">
         <p class="col-md-4 mb-0 ml-5 text-muted">Reloved</p>
         <p class="col-md-4 mb-0 justify-content-end text-muted">About us</p>
+
+        <div class="theme-container">
+            <button id="theme-toggle">Switch to Dark Mode</button>
+        </div>
     </footer>
     <script src="main.js"></script>
 </body>

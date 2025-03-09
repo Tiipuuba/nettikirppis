@@ -14,6 +14,8 @@ body {
 .card {
     flex-direction: row;
     margin-bottom: 35px;
+    font-family: "Quicksand", serif;
+    padding: 20px;
 }
 .card img {
     width: 250px;
@@ -105,8 +107,10 @@ body {
 
 footer {
     background-color: white;
-    height: 100px;
     width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 100px;
 }
 
 /* Header */
@@ -146,7 +150,6 @@ header .logo-container img {
     align-items: center;
     text-align: center;
     align-self: center;
-
 }
 
 .buttonlogin:hover {
@@ -171,6 +174,67 @@ header .logo-container img {
 
 .storeb:hover {
     background-color: #dedff0;
+}
+
+.profileb {
+    background-color: #d0d0d4;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+
+.profileb:hover {
+    background-color: #dedff0;
+}
+
+.adb {
+    background-color: #d0d0d4;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+
+
+.logoutbutton {
+    background-color: #d0d0d4;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+
+.logoutbutton:hover {
+    background-color: #dedff0;
+}
+
+#logoutbuttonStore, #logoutbuttonIndex, #logoutbuttonProfile {
+    display: none;
 }
 
 .card {
@@ -228,7 +292,7 @@ header .logo-container img {
     text-align: left;
     font-family: "Quicksand", serif;
     font-size: 20px;
-    background-color: white;
+    background-color: rgb(243, 244, 252);
     color: black;
     padding: 50px;
     border-radius: 10px;
@@ -476,7 +540,25 @@ header .logo-container img {
         width: 150px;
     }
 
+    .logoutbutton {
+        height: 40px;
+        font-size: 12px;
+        width: 100px;
+    }
+
     .storeb {
+        height: 40px;
+        font-size: 12px;
+        width: 100px;
+    }
+
+    .profileb {
+        height: 40px;
+        font-size: 12px;
+        width: 100px;
+    }
+
+    .adb {
         height: 40px;
         font-size: 12px;
         width: 100px;
@@ -532,6 +614,24 @@ header .logo-container img {
     }
 
     .storeb {
+        height: 30px;
+        font-size: 10px;
+        width: 70px;
+    }
+
+    .profileb {
+        height: 30px;
+        font-size: 10px;
+        width: 70px;
+    }
+
+    .adb {
+        height: 30px;
+        font-size: 10px;
+        width: 70px;
+    }
+
+    .logoutbutton {
         height: 30px;
         font-size: 10px;
         width: 70px;
@@ -664,7 +764,7 @@ header .logo-container img {
         width: auto;
     }
     .imgText {
-        font-size: 21px;
+        font-size: 22px;
         white-space: nowrap;
     }
  
@@ -676,6 +776,24 @@ header .logo-container img {
     }
 
     .storeb {
+        height: 20px;
+        font-size: 10px;
+        width: 100px;
+    }
+
+    .logoutbutton{
+        height: 20px;
+        font-size: 10px;
+        width: 100px;
+    }
+
+    .profileb {
+        height: 20px;
+        font-size: 10px;
+        width: 100px;
+    }
+    
+    .adb{
         height: 20px;
         font-size: 10px;
         width: 100px;
@@ -694,7 +812,7 @@ header .logo-container img {
 
     .introductoryText {
         max-width: 380px;
-        font-size: 15px;
+        font-size: 13px;
     }
 
 
@@ -707,7 +825,7 @@ header .logo-container img {
     .infotext {
         grid-template-columns: 1fr;
         gap: 20px;
-
+        font-size: 13px;
     }
 
     .infotext-item img {
@@ -749,7 +867,4 @@ header .logo-container img {
     #loginerror{ 
         font-size: 12px;
     }
-
-
-
 }

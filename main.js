@@ -25,7 +25,50 @@ toggleButton.addEventListener("click", () => {
     applyTheme(); // Update button text
 });
 
-//Mona
+// Tarkistaa onko käyttäjä kirjautunut
+document.addEventListener("DOMContentLoaded", function () {
+    const loginButton = document.getElementById("buttonlogin");
+    const logoutButtonStore = document.getElementById("logoutbuttonStore");
+    const logoutButtonIndex = document.getElementById("logoutbuttonIndex");
+    const logoutButtonProfile = document.getElementById("logoutbuttonProfile");
+    const profileButton = document.getElementById("profileb");
+    const adButton =document.getElementById("ad");
+
+
+    const loggedUser = localStorage.getItem("loggedUser");
+    console.log("loggedUser:", loggedUser);
+
+    if (loggedUser && loggedUser.trim() !== "") {
+        if (loginButton) loginButton.style.display = "none";
+        if (logoutButtonStore) logoutButtonStore.style.display = "block";
+        if (logoutButtonIndex) logoutButtonIndex.style.display = "block";
+        if (logoutButtonProfile) logoutButtonProfile.style.display = "block";
+        if (profileButton) profileButton.style.display = "block";
+        if (adButton) adButton.style.display = "block";
+
+    } else {
+        if (loginButton) loginButton.style.display = "block";
+        if (logoutButtonStore) logoutButtonStore.style.display = "none";
+        if (logoutButtonIndex) logoutButtonIndex.style.display = "none";
+        if (logoutButtonProfile) logoutButtonProfile.style.display = "none";
+        if (profileButton) profileButton.style.display = "none";
+        if (adButton) adButton.style.display = "none";
+
+    }
+
+    if (logoutButtonStore) {
+        logoutButtonStore.addEventListener("click", kirjauduUlos);
+    }
+    if (logoutButtonIndex) {
+        logoutButtonIndex.addEventListener("click", kirjauduUlos);
+    }
+    if (logoutButtonProfile) {
+        logoutButtonProfile.addEventListener("click", kirjauduUlos);
+    }
+});
+
+
+
 function avaaRekisterointi() {
     document.getElementById("loginform").style.display = "none";
     document.getElementById("registerform").style.display = "block";
@@ -36,6 +79,7 @@ function rekisteroidy() {
     let email = document.getElementById("email").value;
     let newPassword = document.getElementById("newPassword").value;
     let confirmPassword = document.getElementById("confirmPassword").value;
+    let age = document.getElementById("birthdate").value;
 
     let registerErrorElement = document.getElementById("registererror");
     registerErrorElement.style.display = "none";
@@ -63,6 +107,14 @@ function rekisteroidy() {
         return;
     }
 
+// Testaa sähköpostin muodon
+    let emailTest = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailTest.test(email)) {
+        registerErrorElement.style.display = "block";
+        registerErrorElement.textContent = "Virheellinen sähköpostiosoite";
+        return;
+    }
 // Tarkistaa onko sähköpostiosoite jo käytössä
     if (users.some(user => user.email === email)) {
         registerErrorElement.style.display = "block";
@@ -82,7 +134,8 @@ function rekisteroidy() {
     let user = {
         username: newUsername,
         email: email,
-        password: newPassword
+        password: newPassword,
+        birthdate: age 
     };
 
 
@@ -108,10 +161,12 @@ function kirjaudu() {
 
     if (user) {
         localStorage.setItem("loggedUser", user.username)
+        console.log("Kirjautunut:" + user.username)
         window.location.href = "store.html";
     } else {
         document.getElementById("loginerror").style.display = "block";
     }
+
 }
 
 // Tyhjentää rekisteröintilomakkeelta kentät ja ohjaa takaisin kirjautumislomakkeelle
@@ -131,6 +186,13 @@ function peruutaKirjautuminen() {
     document.getElementById("userpassword").value = "";
 
     window.location.href = "index.html";
+}
+
+function kirjauduUlos () {
+    localStorage.removeItem("loggedUser");
+    window.location.href = "index.html"; 
+
+    console.log("Käyttäjä on kirjautunut ulos");
 }
 
 //Logoa painamalla palaa etusivulle

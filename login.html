@@ -15,6 +15,8 @@
         <div class="button-container">
                 <button class="storeb" onclick="window.location.href='store.html'">Kauppa</button>
                 <button class="frontpage" onclick="window.location.href='index.html'">Etusivu</button>
+                <button class="logoutbutton" id="logoutbutton" style="display:none;" onclick="kirjauduUlos()">Kirjaudu ulos</button>
+
         </div>
     </header>
 
@@ -39,6 +41,7 @@
                 <p id="registererror"></p>
                 <input type="text" id="newUsername" placeholder="Valitse käyttäjänimi">
                 <input type="email" id="email" placeholder="Sähköposti">
+                <input type="date" id="birthdate">
                 <input type="password" id="newPassword" placeholder="Valitse salasana">
                 <input type="password" id="confirmPassword" placeholder="Syötä salasana uudelleen">
     
@@ -52,6 +55,11 @@
     <footer class="d-flex justify-content-between align-items-center">
         <p class="col-md-4 mb-0 ml-5 text-muted">Reloved</p>
         <p class="col-md-4 mb-0 justify-content-end text-muted">About us</p>
+        
+        <div class="theme-container">
+            <button id="theme-toggle">Switch to Dark Mode</button>
+        </div>
+
     </footer>
     <script src="main.js"></script>
 </body>
