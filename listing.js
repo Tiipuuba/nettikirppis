@@ -51,17 +51,17 @@ function createListing() {
     offer.classList.add('form-inline')
 
     const offerDiv = document.createElement("div")
-    offerDiv.classList.add('form-group', 'mx-sm-3', 'mb-2')
+    offerDiv.classList.add('form-group')
 
     const offerBox = document.createElement("input")
     offerBox.setAttribute('type', 'text')
     offerBox.setAttribute('id', 'changelater')
-    offerBox.setAttribute('placeholder', 'Vapaa tarjous')
+    offerBox.setAttribute('placeholder', 'lähetä viesti ostajalle.')
 
     const offerBtn = document.createElement("button")
     offerBtn.setAttribute('type', 'submit')
     offerBtn.classList.add('btn', 'btn-primary', 'mb-2')
-    offerBtn.innerText = "Tarjoa!"
+    offerBtn.innerText = "Lähetä"
 
     const img = document.createElement("img")
     img.setAttribute('src', 'img/imgnotfound.png')
@@ -76,7 +76,7 @@ function createListing() {
     card.appendChild(cardbody)
     card.appendChild(img)
     container.appendChild(card)
-    document.getElementById('listings').appendChild(container)
+    document.getElementById('storeContainer').appendChild(container)
     
     // Close modal when done
     var modal = bootstrap.Modal.getInstance(document.getElementById('listingModal'))

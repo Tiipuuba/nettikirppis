@@ -109,11 +109,25 @@ h2 {
     min-height: 71vh
 }
 
+#storeContainer {
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 25px 225px 25px 225px;
+    background-color: grey;
+}
+
+.message-container {
+    background-color: white;
+    margin: 25px;
+    border: 5px solid grey;
+    border-radius: 10px;
+}
+
 footer {
     background-color: white;
     width: 100%;
     bottom: 0;
-    position: fixed;
     height: 100px;
 }
 

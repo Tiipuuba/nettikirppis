@@ -18,18 +18,23 @@
                 <button class="logoutbutton" id="logoutbuttonProfile" style="display:none;" onclick="kirjauduUlos()">Kirjaudu ulos</button>
         </div>
     </header>
-    <div class="content">
-        <div class="profiili-container">
-            <img id="proimg" src="img/profiili.png" alt="profiili">
-            <ul id="profiili-lista">
-                <li>Nimi: Pekka perinteinen</li>
-                <li>Ikä: 18</li>
-                <li>Syntymäpäivä: 20.7.2006</li>
-                <li>...</li>
-                <li>...</li>
-                <li>...</li>
-                <li>...</li>
-            </ul>
+    <div class="content container">
+        <div class="row">
+            <div class="profiili-container col">
+                <img id="proimg" src="img/profiili.png" alt="profiili">
+                <ul id="profiili-lista">
+                    <li>Nimi: Pekka perinteinen</li>
+                    <li>Ikä: 18</li>
+                    <li>Syntymäpäivä: 20.7.2006</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+            </div>
+            <div class="message-container col">
+                <h2>Viestit:</h2>
+            </div>
         </div>
         <div class="theme-container">
             <button id="theme-toggle">Switch to Dark Mode</button>
