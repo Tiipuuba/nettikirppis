@@ -151,7 +151,7 @@ header .logo-container img {
 .header-grid .button-container {
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 10px;
 }
 
 .buttonlogin {
@@ -535,13 +535,32 @@ header .logo-container img {
         font-size: 60px;
     }
 
+    .header {
+        width: 100%;
+    }
+
     .introductoryText {
         max-width: 1000px;
         font-size: 20px;
     }
+
+    .frontpage, .storeb, .profileb, .adb, .logoutbutton {
+        height: 40px;
+        font-size: 15px;
+        width: 120px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
+    body { 
+        padding: 0;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+
     .imgText {
         font-size: 40px;
     }
@@ -558,31 +577,7 @@ header .logo-container img {
         width: 150px;
     }
 
-    .logoutbutton {
-        height: 40px;
-        font-size: 12px;
-        width: 100px;
-    }
-
-    .storeb {
-        height: 40px;
-        font-size: 12px;
-        width: 100px;
-    }
-
-    .profileb {
-        height: 40px;
-        font-size: 12px;
-        width: 100px;
-    }
-
-    .adb {
-        height: 40px;
-        font-size: 12px;
-        width: 100px;
-    }
-
-    .frontpage {
+    .frontpage, .storeb, .profileb, .adb, .logoutbutton { 
         height: 40px;
         font-size: 12px;
         width: 100px;
@@ -613,6 +608,11 @@ header .logo-container img {
         font-size: 30px;
     }
 
+    .header {
+        width: 100%;
+    }
+
+
     .introductoryText {
         max-width: 500px;
         font-size: 17px;
@@ -620,45 +620,22 @@ header .logo-container img {
     }
 
     .buttonlogin {
-        height: 30px;
+        height: 20px;
         font-size: 10px;
         width: 150px;
-    }
-
-    .frontpage {
-        height: 30px;
-        font-size: 10px;
-        width: 70px;
-    }
-
-    .storeb {
-        height: 30px;
-        font-size: 10px;
-        width: 70px;
-    }
-
-    .profileb {
-        height: 30px;
-        font-size: 10px;
-        width: 70px;
-    }
-
-    .adb {
-        height: 30px;
-        font-size: 10px;
-        width: 70px;
-    }
-
-    .logoutbutton {
-        height: 30px;
-        font-size: 10px;
-        width: 70px;
     }
 
     .header-grid .button-container {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
+    }
+
+
+    .frontpage, .storeb, .profileb, .adb, .logoutbutton {
+        height: 20px;
+        font-size: 10px;
+        width: 70px;
     }
 
     #responsivelogo {
@@ -666,15 +643,9 @@ header .logo-container img {
         width: auto;
     }
 
-    header.header-grid  {
-        height: 120px;
-        width: 100%;
-    }
-
     .infotext {
         grid-template-columns: 1fr;
         gap: 20px;
-
     }
 
     .infotext-item img {
@@ -768,24 +739,23 @@ header .logo-container img {
     }  
 
     #responsivelogo {
-        height: 50px;
+        height: 40px;
         width: auto;
     }
 
-    header.header-grid  {
-        height: 90px;
+    .header {
         width: 100%;
     }
 
-    header img {
-        height: 60px;
-        width: auto;
+    header.header-grid  {
+        height: 100px;
+        width: 100%;
     }
+
     .imgText {
         font-size: 22px;
         white-space: nowrap;
     }
- 
 
     .buttonlogin {
         height: 20px;
@@ -793,57 +763,36 @@ header .logo-container img {
         width: 150px;
     }
 
-    .storeb {
+    .storeb, .logoutbutton, .profileb, .adb, .frontpage {
         height: 20px;
         font-size: 10px;
-        width: 100px;
+        width: 70px;
     }
 
-    .logoutbutton{
-        height: 20px;
-        font-size: 10px;
-        width: 100px;
-    }
-
-    .profileb {
-        height: 20px;
-        font-size: 10px;
-        width: 100px;
-    }
-    
-    .adb{
-        height: 20px;
-        font-size: 10px;
-        width: 100px;
-    }
-
-    .frontpage {
-        height: 20px;
-        font-size: 10px;
-        width: 100px;
-    }
     .header-grid .button-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        gap: 5px;
     }
+
 
     .introductoryText {
         max-width: 380px;
         font-size: 13px;
+        padding: 25px;
+        margin-top: 170px;
+        margin-bottom: 0;
     }
-
 
     .info {
         font-size: 30px;
         text-align: center;
-        margin: 10px;
+        margin: 0;
     }
 
     .infotext {
         grid-template-columns: 1fr;
         gap: 20px;
         font-size: 13px;
+
     }
 
     .infotext-item img {
