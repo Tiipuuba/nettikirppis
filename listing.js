@@ -56,10 +56,11 @@ function createListing() {
     const offerBox = document.createElement("input")
     offerBox.setAttribute('type', 'text')
     offerBox.setAttribute('id', 'changelater')
-    offerBox.setAttribute('placeholder', 'lähetä viesti ostajalle.')
+    offerBox.setAttribute('placeholder', 'lähetä viesti myyjälle.')
 
     const offerBtn = document.createElement("button")
-    offerBtn.setAttribute('type', 'submit')
+    offerBtn.setAttribute('type', 'button')
+    offerBtn.setAttribute('onclick', `sendMsg("${user}")`)
     offerBtn.classList.add('btn', 'btn-primary', 'mb-2')
     offerBtn.innerText = "Lähetä"
 
@@ -81,4 +82,53 @@ function createListing() {
     // Close modal when done
     var modal = bootstrap.Modal.getInstance(document.getElementById('listingModal'))
     modal.hide();
+}
+
+function sendMsg (seller, item) {
+    const message = document.getElementById(seller + item).value
+    const buyer = localStorage.getItem('loggedUser')
+
+    
+}
+
+function delMsg() {
+    console.log("poistettu");
+    
+}
+
+function createMsg() {
+
+    // !temporary!
+    const name = "Kissa"
+
+    // new card and cardbody
+    const card = document.createElement('div')
+    card.classList.add('card')
+
+    const cardbody = document.createElement('div')
+    cardbody.classList.add('card-body')
+
+    // card content
+        // card title and delete button
+    const titlendel = document.createElement('div')
+    titlendel.classList.add('d-flex', 'justify-content-between')
+
+    const title = document.createElement('h5')
+    title.innerText = name
+    const del = document.createElement('h5')
+    del.classList.add('delMsg')
+    del.setAttribute('onclick', 'delMsg()')
+    del.innerText = "X"
+
+    titlendel.appendChild(title)
+    titlendel.appendChild(del)
+    cardbody.appendChild(titlendel)
+
+
+
+
+
+
+    card.appendChild(cardbody)
+    document.getElementById('msgBox').appendChild(card)
 }

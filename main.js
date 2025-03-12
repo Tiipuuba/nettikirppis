@@ -135,7 +135,10 @@ function rekisteroidy() {
         username: newUsername,
         email: email,
         password: newPassword,
-        birthdate: age 
+        birthdate: age,
+        messages: [
+            "Jimmy&Test message"
+        ]
     };
 
 
@@ -201,4 +204,3 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "index.html"; 
     });
 });
-

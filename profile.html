@@ -32,8 +32,42 @@
                     <li>...</li>
                 </ul>
             </div>
-            <div class="message-container col">
-                <h2>Viestit:</h2>
+            <div class="message-container col" id="msgBox">
+                <h2 id="msg-title">Viestit:</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Sohva</h5>
+                            <h5 class="del-Msg" onclick="delMsg()">X</h2>
+                        </div>
+                        <a class="mb2" href="#" onclick="createMsg()">TiinaMiina</a>
+                        <p></p>
+                        <p class="card-text">Onko eläimetön talous?</p>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" id="given offer" placeholder="Vastaa ostajalle">
+                                <button type="submit" class="btn btn-primary mb-2">Vastaa</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>Sohva</h5>
+                            <h5 class="delMsg" onclick="delMsg()">X</h2>
+                        </div>
+                        <a class="mb2" href="#">TimoM</a>
+                        <p></p>
+                        <p class="card-text">Tarjoan 5e, mistä haku?</p>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" id="given offer" placeholder="Vastaa ostajalle">
+                                <button type="submit" class="btn btn-primary mb-2">Vastaa</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="theme-container">
@@ -45,5 +79,6 @@
         <p class="col-md-4 mb-0 justify-content-end text-muted">About us</p>
     </footer>
     <script src="main.js"></script>
+    <script src="listing.js"></script>
 </body>
 </html>
