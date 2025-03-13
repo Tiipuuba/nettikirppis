@@ -137,7 +137,8 @@ function rekisteroidy() {
         password: newPassword,
         birthdate: age,
         messages: [
-            "Jimmy&Test message"
+            "Jimmy&Test message",
+            "Roope&En osta!"
         ]
     };
 
