@@ -74,6 +74,7 @@ function avaaRekisterointi() {
     document.getElementById("registerform").style.display = "block";
 }
 
+// Rekisteröintilomake
 function rekisteroidy() {
     let newUsername = document.getElementById("newUsername").value;
     let email = document.getElementById("email").value;
@@ -147,7 +148,7 @@ function rekisteroidy() {
     localStorage.setItem("users", JSON.stringify(users));
 
 
-    window.location.href = "store.html";
+    window.location.href = "login.html";
 }
 
 function kirjaudu() {
