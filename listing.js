@@ -84,48 +84,61 @@ function createListing() {
     modal.hide();
 }
 
-function sendMsg (receiver, item, sender, reply) {
-    console.log(receiver);
-    console.log(item);
-    console.log(sender);
-    console.log(reply);
-    
-    console.log(item + receiver);
-    
-    
-    const message = document.getElementById(item + receiver).value
-    const buyer = localStorage.getItem('loggedUser')
+function sendMsg (receiver, item, sender, prevMsg) {
+    if (prevMsg === 'startConversation') {
+        var message = document.getElementById(receiver + item ).value
+    } else {
+        var message = document.getElementById(item + receiver).value
+    }
 
-    if (reply === "true") {
-        console.log(`Message: ${message}, send by: ${sender}, received by ${receiver}, is reply`);
-        
+    const users = JSON.parse(localStorage.getItem("users"))
+    
+    const msgreceiver = users.find(user => user.username === receiver)   
+    msgreceiver.messages.push(`${sender}&${item}&${message}`)
+
+    localStorage.setItem("users", JSON.stringify(users))
+    console.log(message);
+    
+    
+    if (prevMsg !== 'startConversation') {
+        delMsg(sender, item, prevMsg)
     }
     
 }
 
-function delMsg() {
-    console.log("poistettu");
+function delMsg(sender, item, msgContent) {
+    console.log(sender);
+    console.log(item);
+    console.log(msgContent);
     
+    const logged = localStorage.getItem("loggedUser")
+
+    const users = JSON.parse(localStorage.getItem("users"))
+    const msgreceiver = users.find(user => user.username === logged)
+
+    const index = msgreceiver.messages.indexOf(`${sender}&${item}&${msgContent}`)
+
+    if (index !== -1) {
+        msgreceiver.messages.splice(index, 1);
+        localStorage.setItem("users", JSON.stringify(users));
+    }
+    location.reload()
 }
 
 function updateMsgs() {
+
     const logged = localStorage.getItem("loggedUser")
     const users = JSON.parse(localStorage.getItem("users"))
-    console.log(users);
 
-    const toine = users.find(user => user.username === "toinetolvana")
-    console.log(toine.messages[0]);
-    
-    
-    createMsg()
+    const currentUser = users.find(user => user.username === logged)
+
+    for ( let x in currentUser.messages) {
+        let msginfo = currentUser.messages[x].split("&");      
+        createMsg(msginfo[0], msginfo[1], msginfo[2])
+    } 
 }
 
-function createMsg() {
-
-    // !temporary!
-    const name = "Kissa"
-    const buyer = "Pertti1899"
-    const msg = "Saanko ilmasiks"
+function createMsg(senderName, itemName, msgContent) {
 
     // new card and cardbody
     const card = document.createElement('div')
@@ -140,10 +153,10 @@ function createMsg() {
     titlendel.classList.add('d-flex', 'justify-content-between')
 
     const title = document.createElement('h5')
-    title.innerText = name
+    title.innerText = itemName
     const del = document.createElement('h5')
     del.classList.add('delMsg')
-    del.setAttribute('onclick', 'delMsg()')
+    del.setAttribute('onclick', `delMsg("${senderName}", "${itemName}", "${msgContent}")`)
     del.innerText = "X"
 
     titlendel.appendChild(title)
@@ -154,13 +167,13 @@ function createMsg() {
     const buyerName = document.createElement('a')
     buyerName.classList.add('mb2')
     buyerName.setAttribute('href', "#")
-    buyerName.innerText = buyer
+    buyerName.innerText = senderName
 
     const space = document.createElement('p')
 
     const message = document.createElement('p')
     message.classList.add('card-text')
-    message.innerText = msg
+    message.innerText = msgContent
 
     cardbody.appendChild(buyerName)
     cardbody.appendChild(space)
@@ -175,12 +188,12 @@ function createMsg() {
 
     const offerBox = document.createElement("input")
     offerBox.setAttribute('type', 'text')
-    offerBox.setAttribute('id', `${name}${buyer}`)
+    offerBox.setAttribute('id', `${itemName}${senderName}`)
     offerBox.setAttribute('placeholder', 'Vastaa ostajalle')
 
     const offerBtn = document.createElement("button")
     offerBtn.setAttribute('type', 'button')
-    offerBtn.setAttribute('onclick', `sendMsg("${buyer}", "${name}", "${localStorage.getItem("loggedUser")}", "true")`)
+    offerBtn.setAttribute('onclick', `sendMsg("${senderName}", "${itemName}", "${localStorage.getItem("loggedUser")}", "${msgContent}")`)
     offerBtn.classList.add('btn', 'btn-primary', 'mb-2')
     offerBtn.innerText = "Vastaa"
 
