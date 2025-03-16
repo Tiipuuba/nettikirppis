@@ -55,12 +55,12 @@ function createListing() {
 
     const offerBox = document.createElement("input")
     offerBox.setAttribute('type', 'text')
-    offerBox.setAttribute('id', 'changelater')
+    offerBox.setAttribute('id', `${user}${prod}`)
     offerBox.setAttribute('placeholder', 'lähetä viesti myyjälle.')
 
     const offerBtn = document.createElement("button")
     offerBtn.setAttribute('type', 'button')
-    offerBtn.setAttribute('onclick', `sendMsg("${user}")`)
+    offerBtn.setAttribute('onclick', `sendMsg("${user}", "${prod}", "${localStorage.getItem("loggedUser")}", "startConversation")`)
     offerBtn.classList.add('btn', 'btn-primary', 'mb-2')
     offerBtn.innerText = "Lähetä"
 
@@ -85,8 +85,15 @@ function createListing() {
 }
 
 function sendMsg (receiver, item, sender, prevMsg) {
+
+    if (localStorage.getItem("loggedUser") === null) {
+        window.alert("Et voi lähettää viestiä kirjautumatta!");
+        return;
+    }
+
     if (prevMsg === 'startConversation') {
         var message = document.getElementById(receiver + item ).value
+        document.getElementById(receiver + item ).value = ""
     } else {
         var message = document.getElementById(item + receiver).value
     }
@@ -97,19 +104,18 @@ function sendMsg (receiver, item, sender, prevMsg) {
     msgreceiver.messages.push(`${sender}&${item}&${message}`)
 
     localStorage.setItem("users", JSON.stringify(users))
-    console.log(message);
+    window.alert("Lähetetty.");
     
     
     if (prevMsg !== 'startConversation') {
-        delMsg(sender, item, prevMsg)
+        console.log(receiver, item, prevMsg);
+        
+        delMsg(receiver, item, prevMsg)
     }
     
 }
 
 function delMsg(sender, item, msgContent) {
-    console.log(sender);
-    console.log(item);
-    console.log(msgContent);
     
     const logged = localStorage.getItem("loggedUser")
 
