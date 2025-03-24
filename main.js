@@ -88,7 +88,7 @@ function rekisteroidy() {
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
 // Tarkistaa onko kaikki input kentät täytettynä
-    if (newUsername === "" || email === "" || newPassword === "" || confirmPassword === "") {
+    if (newUsername === "" || email === "" || newPassword === "" || confirmPassword === "" || age === "") {
         registerErrorElement.style.display = "block";
         registerErrorElement.textContent = "Täytä puuttuvat kentät";
         return;
