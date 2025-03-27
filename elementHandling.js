@@ -1,12 +1,48 @@
-function createListing() {
-    // Robert
+function updateListings() {
+    if (localStorage.getItem('listings') === null) {
+        list = {}
+        localStorage.setItem('listings', JSON.stringify(list))
+    }
+
+    const listings = JSON.parse(localStorage.getItem('listings'))
+
+    for (let x in listings) {
+        
+        const tiedot = listings[x]
+        createListing(tiedot[0], tiedot[1], tiedot[2], tiedot[3], tiedot[4])
+    }
+}
+
+function createListing(p, l, d, c, u) {
 
     // get details
-    const prod = document.getElementById('inputProduct').value
-    const loc = document.getElementById('inputLocation').value
-    const desc = document.getElementById('inputDescription').value
-    const cost = document.getElementById('inputCost').value
-    const user = localStorage.getItem('loggedUser')
+    if (p === undefined) {
+        var prod = document.getElementById('inputProduct').value
+        var loc = document.getElementById('inputLocation').value
+        var desc = document.getElementById('inputDescription').value
+        var cost = document.getElementById('inputCost').value
+        var user = localStorage.getItem('loggedUser')
+        
+        var newListing = [prod, loc, desc, cost, user]
+
+        if (localStorage.getItem('listings') === null) {
+            list = {}
+            localStorage.setItem('listings', JSON.stringify(list))
+        } else if (localStorage.getItem('listings') !== null) {
+            const listings = JSON.parse(localStorage.getItem('listings'))
+            listings.push(newListing)
+            localStorage.setItem('listings', JSON.stringify(listings))
+        }
+        var modal = bootstrap.Modal.getInstance(document.getElementById('listingModal'))
+        modal.hide();
+
+    } else if (p !== undefined){
+        var prod = p
+        var loc = l
+        var desc = d
+        var cost = c
+        var user = u
+    }
 
     // create card frame and such for listing
     const container = document.createElement("div")
@@ -80,8 +116,7 @@ function createListing() {
     document.getElementById('storeContainer').appendChild(container)
     
     // Close modal when done
-    var modal = bootstrap.Modal.getInstance(document.getElementById('listingModal'))
-    modal.hide();
+
 }
 
 function sendMsg (receiver, item, sender, prevMsg) {
